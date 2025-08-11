@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main class="app">
+      <section class="player">
+        <div class="cover-wrapper">
+          <img id="cover" class="cover" src="https://picsum.photos/seed/music1/400" alt="Album cover" />
+        </div>
+
+        <div class="track-info">
+          <h2 id="title" class="title">—</h2>
+          <p id="artist" class="artist">—</p>
+        </div>
+
+        <div class="progress-area">
+          <div class="time-row">
+            <span id="currentTime">0:00</span>
+            <span id="totalDuration">0:00</span>
+          </div>
+          <input id="progress" class="progress" type="range" min="0" max="100" value="0" step="0.1" />
+        </div>
+
+        <div class="controls">
+          <button id="prevBtn" class="btn" aria-label="Previous track">⏮</button>
+          <button id="playPauseBtn" class="btn primary" aria-label="Play or pause">▶</button>
+          <button id="nextBtn" class="btn" aria-label="Next track">⏭</button>
+
+          <div class="volume">
+            <span aria-hidden="true">🔊</span>
+            <input id="volume" type="range" min="0" max="1" value="0.8" step="0.01" aria-label="Volume" />
+          </div>
+        </div>
+
+        <div class="toggles">
+          <label class="toggle">
+            <input id="autoplayToggle" type="checkbox" />
+            <span>Autoplay next</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="playlist">
+        <h3>Playlist</h3>
+        <ul id="playlist" class="playlist-list" role="list"></ul>
+      </section>
+    </main>
+
+    <audio id="audio" preload="metadata"></audio>
+    <script src="script.js"></script>
+  </body>
+</html> 
